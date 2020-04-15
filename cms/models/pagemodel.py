@@ -15,6 +15,7 @@ from django.utils.timezone import now
 from django.utils.translation import (
     get_language,
     override as force_language,
+    ugettext,
     ugettext_lazy as _,
 )
 
@@ -1647,3 +1648,7 @@ class PageType(Page):
 
     def is_potential_home(self):
         return False
+
+    class Meta:
+        verbose_name = ugettext('Page type')
+        verbose_name_plural = ugettext('Page Types')
